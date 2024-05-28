@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moodle Architecture Calculator</title>
+</head>
+<body>
+    <h1>Moodle Architecture Calculator</h1>
+    <form action="/calculate" method="post">
+        <label for="concurrent_users">Concurrent Users:</label>
+        <input type="number" id="concurrent_users" name="concurrent_users" required><br><br>
+        
+        <label for="peak_factor">Peak Factor:</label>
+        <select id="peak_factor" name="peak_factor" required>
+            <option value="1.0">Standard Usage (1.0)</option>
+            <option value="1.2">Moderate Peaks (1.2)</option>
+            <option value="1.5">High Peaks (1.5)</option>
+            <option value="2.0">Very High Peaks (2.0)</option>
+            <option value="2.5">Extreme Peaks (2.5)</option>
+        </select>
+        <p><small>Select a peak factor based on your expected usage pattern:</small></p>
+        <ul>
+            <li><strong>Standard Usage (1.0):</strong> Consistent usage without significant peaks.</li>
+            <li><strong>Moderate Peaks (1.2):</strong> Regular class schedules with higher activity during certain times.</li>
+            <li><strong>High Peaks (1.5):</strong> Significant peaks during exams or large training sessions.</li>
+            <li><strong>Very High Peaks (2.0):</strong> Very high usage during critical periods.</li>
+            <li><strong>Extreme Peaks (2.5):</strong> Extreme spikes in usage.</li>
+        </ul>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
